@@ -1,4 +1,3 @@
-
 export const SidebarOptionMotion = {
   initial: {
     opacity: 0,
@@ -27,27 +26,37 @@ export const SideBarMotion = {
 
 export const categories = [
   {
-    label: "tech gadgets"
+    label: "tech gadgets",
   },
   {
-    label: "home appliances"
+    label: "home appliances",
   },
   {
-    label: "clothes"
+    label: "clothes",
   },
   {
-    label: "beauty Products"
+    label: "beauty Products",
   },
   {
-    label: "sports"
+    label: "sports",
   },
   {
-    label: "health"
+    label: "health",
   },
   {
-    label: "toys"
+    label: "toys",
   },
   {
-    label: "books"
-  }
-]
+    label: "books",
+  },
+];
+
+export const prices = [
+  { label: "100000" },
+  { label: "50000" },
+  { label: "10000" },
+  { label: "5000" },
+  {
+    label: "1000",
+  },
+];

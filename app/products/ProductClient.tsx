@@ -15,7 +15,7 @@ const ProductClient: React.FC<ProductClientProps> = ({
   const router = useRouter();
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 flex flex-col justify-center items-center  overflow-x-hidden overflow-y-auto'>
       <section onClick={() => router.push('/addProduct')} className='AddProductBtn w-fit'>
         <h3 className='text-xl'>Add your Product</h3>
       </section>

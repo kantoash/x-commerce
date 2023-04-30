@@ -3,6 +3,7 @@ import ProductClient from './ProductClient'
 import ClientOnly from '@/components/ClientOnly';
 import EmptyState from '@/components/EmptyState';
 import getMyProducts from '../actions/getMyProducts';
+
 const page = async () => {
   const products = await getMyProducts();
   

@@ -1,9 +1,13 @@
 import Banner from "@/components/input/Banner";
-import getProducts from "./actions/getProducts";
+import getProducts, { IProductsParams } from "./actions/getProducts";
 import ListingCard from "@/components/input/ListingCard";
 
-export default async function Home() {
-  const products = await getProducts();
+interface HomeProps {
+  searchParams: IProductsParams;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const products = await getProducts(searchParams);
 
   return (
     <main className="mt-10 flex flex-col justify-center items-center  overflow-x-hidden overflow-y-auto">

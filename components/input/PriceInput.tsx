@@ -2,13 +2,13 @@
 
 import React from "react";
 
-interface CategoryInputProps {
+interface PriceInputProps {
     label: string;
     selected: boolean;
     setValue: (value: string) => void;
 }
 
-const CategoryInput: React.FC<CategoryInputProps> = ({
+const PriceInput: React.FC<PriceInputProps> = ({
     label,
     selected,
     setValue,
@@ -24,4 +24,4 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
     );
 };
 
-export default CategoryInput;
+export default PriceInput;

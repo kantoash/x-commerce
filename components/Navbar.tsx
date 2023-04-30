@@ -14,11 +14,13 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useCurrentUser from "@/app/hooks/useCurrentUser";
 import { signOut } from 'next-auth/react'
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 const Navbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const loginModal = useLoginModal();
+  const searchModal = useSearchModal();
   const { data: user } = useCurrentUser();  
   
   const MenuModal = () => {
@@ -72,7 +74,7 @@ const Navbar = () => {
         <BuildingStorefrontIcon className="h-5" />
         <span>Ecommerce</span>
       </section>
-      <section className="hidden sm:inline-flex flex-grow bg-blue-300 rounded-md max-w-xl mx-auto px-5 py-2 ">
+      <section onClick={searchModal.onOpen} className="hidden sm:inline-flex flex-grow bg-blue-300 rounded-md max-w-xl mx-auto px-5 py-2 ">
         <input
           placeholder="Search your product..."
           className="flex-grow bg-transparent outline-none placeholder:text-white"
