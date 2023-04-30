@@ -31,6 +31,7 @@ export const CartContextProvider: React.FC<CartContextProps> = ({
   function addProduct(productId: string) {
     setProducts([...products, productId]);
   }
+
   function deleteProduct(productId: string) {
     if (!products) {
       return;
@@ -38,8 +39,10 @@ export const CartContextProvider: React.FC<CartContextProps> = ({
     let Products = products.filter((id) => id !== productId);
     setProducts([...Products]);
   }
+
   function allEmpty() {
     setProducts([]);
+    ls?.setItem("cart", JSON.stringify([]));
   }
   function isProduct(productId: string) {
     const list = products || [];

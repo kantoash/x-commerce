@@ -9,6 +9,8 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import ProductAddReview from "./ProductAddReview";
 import ReviewCard from "@/components/input/ReviewCard";
 import AddTOCart from "@/components/input/AddTOCart";
+import useCurrentUser from "@/app/hooks/useCurrentUser";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 interface ProductIdClientProps {
   product: Product & {
@@ -23,6 +25,15 @@ const ProductIdClient: React.FC<ProductIdClientProps> = ({
   productId,
 }) => {
   const [addReview, setAddReview] = useState(false);
+  const loginModal = useLoginModal();
+  const { data: user } = useCurrentUser();
+  const AddReview = () => {
+    if (!user) {
+      loginModal.onOpen();
+    }else {
+      setAddReview((val) => !val)      
+    }
+  }
   return (
     <div className="my-10 p-2">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-10 ">
@@ -57,7 +68,7 @@ const ProductIdClient: React.FC<ProductIdClientProps> = ({
         <div className="mt-10 flex items-center gap-3">
           <h3 className="text-2xl md:text-4xl font-bold">Reviews</h3>
           <div
-            onClick={() => setAddReview((val) => !val)}
+            onClick={AddReview}
             className="rounded-2xl border-[1px] border-gray-500 p-1 cursor-pointer"
           >
             <PlusIcon className="h-7" />

@@ -9,11 +9,16 @@ import Input from "@/components/input/Input";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import useCurrentUser from "../hooks/useCurrentUser";
+import useLoginModal from "../hooks/useLoginModal";
 
 const CartClient = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { products, allEmpty } = useContext(CartContext) as CartContextType;
+  const loginModal = useLoginModal();
+  const { data: user } = useCurrentUser();
   const router = useRouter();
+
 
   const {
     register,
@@ -86,7 +91,7 @@ const CartClient = () => {
                 required
               />
             </div>
-            <button onClick={handleSubmit(onSubmit)} className="AddProductBtn">
+            <button onClick={!user ? loginModal.onOpen : handleSubmit(onSubmit)} className="AddProductBtn">
               payment
             </button>
           </div>

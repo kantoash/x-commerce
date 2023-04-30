@@ -15,10 +15,7 @@ const FullInfoListingCard: React.FC<FullInfoListingCardProps> = ({
   productId,
 }) => {
   const router = useRouter();
-  const { data: product } = useProduct(productId);
-
-  
-  
+  const { data: product } = useProduct(productId);  
 
   function truncateString(string = "", maxLength = 50) {
     let returnString = "";

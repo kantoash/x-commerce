@@ -29,7 +29,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ order }) => {
       </div>
       
       <div className="flex flex-col gap-6 ">
-        {order.productIds &&
+        {order?.productIds &&
           order.productIds.map((product) => (
             <div>
               <FullInfoListingCard productId={product} />

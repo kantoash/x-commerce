@@ -6,15 +6,12 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { BsCurrencyRupee } from "react-icons/bs";
 import AddTOCart from "./AddTOCart";
-import useCurrentUser from "@/app/hooks/useCurrentUser";
-
 interface ListingCardProps {
     product: Product;
 }
 
 const ListingCard: React.FC<ListingCardProps> = ({ product }) => {
     const router = useRouter();
-    const { data: currentUser } = useCurrentUser();
     return (
         <div className="flex flex-col justify-center cursor-pointer items-center p-3 space-y-5 ">
             <div onClick={() => router.push(`/products/${product?.id}`)} className="h-40 w-40 relative">
