@@ -16,7 +16,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ product }) => {
     const router = useRouter();
     const { data: currentUser } = useCurrentUser();
     return (
-        <div className="flex flex-col justify-center cursor-pointer items-center p-3 space-y-5 h-[350px] w-[350px]">
+        <div className="flex flex-col justify-center cursor-pointer items-center p-3 space-y-5 ">
             <div onClick={() => router.push(`/products/${product?.id}`)} className="h-40 w-40 relative">
                 <Image
                     src={product?.images[0]}
@@ -27,7 +27,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ product }) => {
             </div>
             <div className="flex flex-col justify-center items-center space-y-1 ">
                 <p className="text-xl ">{product?.title}</p>
-                <div className="flex items-center space-x-5 ">
+                <div className="flex items-center space-x-3 ">
                     <div className="flex items-center space-x-1">
                         <BsCurrencyRupee className="h-8" />
                         <h3 className="text-xl font-bold">{product?.price}</h3>

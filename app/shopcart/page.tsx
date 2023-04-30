@@ -2,9 +2,8 @@ import ClientOnly from '@/components/ClientOnly'
 import React from 'react'
 import CartClient from './CartClient'
 
-type Props = {}
 
-const page = (props: Props) => {
+const page = () => {
   return (
     <ClientOnly>
       <CartClient/>
